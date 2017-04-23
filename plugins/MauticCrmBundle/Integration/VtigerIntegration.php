@@ -201,7 +201,7 @@ class VtigerIntegration extends CrmAbstractIntegration
 
                 $this->cache->set('leadFields', $vtigerFields);
             }
-        } catch (ErrorException $exception) {
+        } catch (\ErrorException $exception) {
             $this->logIntegrationError($exception);
 
             if (!$silenceExceptions) {

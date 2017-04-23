@@ -11,9 +11,11 @@
 
 namespace Mautic\FormBundle\Entity;
 
+use Doctrine\Common\Persistence\Mapping\ClassMetadata;
 use Doctrine\ORM\Mapping as ORM;
 use Mautic\ApiBundle\Serializer\Driver\ApiMetadataDriver;
 use Mautic\CoreBundle\Doctrine\Mapping\ClassMetadataBuilder;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 /**
  * Class Action.
@@ -122,9 +124,9 @@ class Action
     /**
      * @param ClassMetadata $metadata
      */
-    public static function loadValidatorMetadata(ClassMetadata $metadata)
+    public static function loadValidatorMetadata(\Symfony\Component\Validator\Mapping\ClassMetadata $metadata)
     {
-        $metadata->addPropertyConstraint('type', new Assert\NotBlank([
+        $metadata->addPropertyConstraint('type', new NotBlank([
             'message' => 'mautic.core.name.required',
             'groups'  => ['action'],
         ]));

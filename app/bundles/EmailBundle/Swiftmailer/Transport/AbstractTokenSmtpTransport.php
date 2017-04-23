@@ -11,6 +11,7 @@
 
 namespace Mautic\EmailBundle\Swiftmailer\Transport;
 
+use Mautic\CoreBundle\Factory\MauticFactory;
 use Mautic\EmailBundle\Swiftmailer\Message\MauticMessage;
 
 /**
