@@ -29,7 +29,7 @@ class DynamicContentLeadData extends CommonEntity
     private $dateAdded;
 
     /**
-     * @var DynamicContent
+     * @var \Mautic\DynamicContentBundle\Entity\DynamicContent
      */
     private $dynamicContent;
 
