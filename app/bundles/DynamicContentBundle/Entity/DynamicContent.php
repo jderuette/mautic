@@ -200,6 +200,20 @@ class DynamicContent extends FormEntity implements VariantEntityInterface, Trans
     }
 
     /**
+     * Set id.
+     *
+     * @param int $id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getName()
