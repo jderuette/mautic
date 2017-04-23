@@ -32,7 +32,7 @@ return [
                 ],
             ],
             'mautic.core.js.subscriber' => [
-                'class' => 'Mautic\NotificationBundle\EventListener\BuildJsSubscriber',
+                'class'     => 'Mautic\NotificationBundle\EventListener\BuildJsSubscriber',
                 'arguments' => [
                     'mautic.helper.notification',
                 ],
@@ -124,10 +124,10 @@ return [
             ],
         ],
         'public' => [
-            'mautic_receive_notification' => [
+            /*'mautic_receive_notification' => [
                 'path'       => '/notification/receive',
                 'controller' => 'MauticNotificationBundle:Api\NotificationApi:receive',
-            ],
+            ],*/
             'mautic_subscribe_notification' => [
                 'path'       => '/notification/subscribe',
                 'controller' => 'MauticNotificationBundle:Api\NotificationApi:subscribe',
@@ -181,14 +181,14 @@ return [
     //    'notification' => null
     //],
     'parameters' => [
-        'notification_enabled'              => false,
-        'notification_landing_page_enabled' => true,
+        'notification_enabled'               => false,
+        'notification_landing_page_enabled'  => true,
         'notification_tracking_page_enabled' => false,
-        'notification_app_id'               => null,
-        'notification_rest_api_key'         => null,
-        'notification_safari_web_id'        => null,
-        'gcm_sender_id'                     => '482941778795',
-        'notification_subdomain_name'       => null,
-        'welcomenotification_enabled'       => true,
+        'notification_app_id'                => null,
+        'notification_rest_api_key'          => null,
+        'notification_safari_web_id'         => null,
+        'gcm_sender_id'                      => '482941778795',
+        'notification_subdomain_name'        => null,
+        'welcomenotification_enabled'        => true,
     ],
 ];

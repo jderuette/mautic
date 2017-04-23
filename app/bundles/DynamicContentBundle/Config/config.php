@@ -36,7 +36,7 @@ return [
         'public' => [
             'mautic_api_dynamicContent_index' => [
                 'path'       => '/dwc',
-                'controller' => 'MauticDynamicContentBundle:DynamicContentApi:getEntities',
+                'controller' => 'MauticDynamicContentBundle:Api\DynamicContentApi:getEntities',
             ],
             'mautic_api_dynamicContent_action' => [
                 'path'       => '/dwc/{objectAlias}',
