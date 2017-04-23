@@ -133,7 +133,7 @@ class HubspotIntegration extends CrmAbstractIntegration
 
         try {
             if ($this->isAuthorized()) {
-                if (!empty($hubspotObjects) and is_array($hubspotObjects)) {
+                if (!empty($hubspotObjects) && is_array($hubspotObjects)) {
                     foreach ($hubspotObjects as $key => $object) {
                         // Check the cache first
                         $settings['cache_suffix'] = $cacheSuffix = '.'.$object;
@@ -330,7 +330,7 @@ class HubspotIntegration extends CrmAbstractIntegration
                             }
                         }
                     }
-                    if (isset($data['hasMore']) and $data['hasMore']) {
+                    if (isset($data['hasMore']) && $data['hasMore']) {
                         $params['vidOffset']  = $data['vid-offset'];
                         $params['timeOffset'] = $data['time-offset'];
                         $this->getCompanies($params);

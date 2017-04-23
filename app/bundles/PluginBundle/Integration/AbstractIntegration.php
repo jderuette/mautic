@@ -1708,7 +1708,7 @@ abstract class AbstractIntegration
 
         foreach ($available as $field => $fieldDetails) {
             if (is_array($data)) {
-                if (!isset($data[$field]) and !is_object($data)) {
+                if (!isset($data[$field]) && !is_object($data)) {
                     $info[$field] = '';
                     continue;
                 } else {

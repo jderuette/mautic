@@ -34,7 +34,7 @@ $query = $event['extra']['hit']['query'];
     <dt><?php echo $view['translator']->trans('mautic.page.url'); ?>:</dt>
     <dd><?php echo $event['extra']['hit']['url'] ? $view['assets']->makeLinks($event['extra']['hit']['url']) : $view['translator']->trans('mautic.core.unknown'); ?></dd>
 
-    <?php if (isset($event['extra']['hit']['device']) and !empty($event['extra']['hit']['device'])): ?>
+    <?php if (isset($event['extra']['hit']['device']) && !empty($event['extra']['hit']['device'])): ?>
         <dt><?php echo $view['translator']->trans('mautic.core.timeline.device.name'); ?></dt>
         <dd class="ellipsis">
             <?php echo $event['extra']['hit']['device']; ?>

@@ -57,11 +57,11 @@ class IntegrationEntityRepository extends CommonRepository
                 ->setParameter('internalEntityId', $internalEntityId);
         }
 
-        if ($startDate and !$push) {
+        if ($startDate && !$push) {
             $q->andWhere('i.last_sync_date >= :startDate')
                 ->setParameter('startDate', $startDate);
         }
-        if ($endDate and !$push) {
+        if ($endDate && !$push) {
             $q->andWhere('i.last_sync_date <= :endDate')
                 ->setParameter('endDate', $endDate);
         }

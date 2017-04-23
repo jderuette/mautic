@@ -507,7 +507,7 @@ class EmailModel extends FormModel implements AjaxLookupModelInterface
             $this->em->flush($email);
         }
 
-        if (isset($emailOpenDevice) and is_object($emailOpenDevice)) {
+        if (isset($emailOpenDevice) && is_object($emailOpenDevice)) {
             $emailOpenStat = new StatDevice();
             $emailOpenStat->setIpAddress($ipAddress);
             $emailOpenStat->setDevice($emailOpenDevice);

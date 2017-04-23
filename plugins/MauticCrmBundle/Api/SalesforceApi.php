@@ -290,7 +290,7 @@ class SalesforceApi extends CrmApi
                 }
         }
         $result = [];
-        if (!empty($fields) and isset($query['start'])) {
+        if (!empty($fields) && isset($query['start'])) {
             $fields[] = 'Id';
             $fields   = implode(', ', array_unique($fields));
 

@@ -820,7 +820,7 @@ class LeadListRepository extends CommonRepository
                     }
 
                     // check does this match php date params pattern?
-                    if (stristr($string[0], '-') or stristr($string[0], '+')) {
+                    if (stristr($string[0], '-') || stristr($string[0], '+')) {
                         $date = new \DateTime('now');
                         $date->modify($string);
                         $dateTime = $date->format('Y-m-d H:i:s');

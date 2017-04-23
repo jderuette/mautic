@@ -112,7 +112,7 @@ class SalesforceIntegration extends CrmAbstractIntegration
     {
         $config = $this->mergeConfigToFeatureSettings([]);
 
-        if (isset($config['sandbox'][0]) and $config['sandbox'][0] === 'sandbox') {
+        if (isset($config['sandbox'][0]) && $config['sandbox'][0] === 'sandbox') {
             return 'https://test.salesforce.com/services/oauth2/token';
         }
 
@@ -254,7 +254,7 @@ class SalesforceIntegration extends CrmAbstractIntegration
 
         $salesFields = [];
         try {
-            if (!empty($salesForceObjects) and is_array($salesForceObjects)) {
+            if (!empty($salesForceObjects) && is_array($salesForceObjects)) {
                 foreach ($salesForceObjects as $key => $sfObject) {
                     if ('Account' === $sfObject) {
                         // Match SF object to Mautic's
@@ -262,7 +262,7 @@ class SalesforceIntegration extends CrmAbstractIntegration
                     }
 
                     if ($this->isAuthorized()) {
-                        if (isset($sfObject) and $sfObject == 'Activity') {
+                        if (isset($sfObject) && $sfObject == 'Activity') {
                             continue;
                         }
 
@@ -379,7 +379,7 @@ class SalesforceIntegration extends CrmAbstractIntegration
         /** @var IntegrationEntityRepository $integrationEntityRepo */
         $integrationEntityRepo = $this->em->getRepository('MauticPluginBundle:IntegrationEntity');
 
-        if (isset($data['records']) and $object !== 'Activity') {
+        if (isset($data['records']) && $object !== 'Activity') {
             foreach ($data['records'] as $record) {
                 $integrationEntities = [];
                 if (isset($record['attributes']['type']) && $record['attributes']['type'] == 'Account') {
@@ -394,7 +394,7 @@ class SalesforceIntegration extends CrmAbstractIntegration
                 }
 
                 if (isset($dataObject) && $dataObject) {
-                    if ($object == 'Lead' or $object == 'Contact') {
+                    if ($object == 'Lead' || $object == 'Contact') {
                         // Set owner so that it maps if configured to do so
                         if (!empty($dataObject['Owner__Lead']['Email'])) {
                             $dataObject['owner_email'] = $dataObject['Owner__Lead']['Email'];
@@ -642,7 +642,7 @@ class SalesforceIntegration extends CrmAbstractIntegration
 
         try {
             if ($this->isAuthorized()) {
-                if ($object !== 'Activity' and $object !== 'company') {
+                if (($object !== 'Activity') && ($object !== 'company')) {
                     $result = $this->getApiHelper()->getLeads($query, $object);
                     $executed += $this->amendLeadDataBeforeMauticPopulate($result, $object);
                     if (isset($result['nextRecordsUrl'])) {
@@ -1625,7 +1625,7 @@ class SalesforceIntegration extends CrmAbstractIntegration
 
         foreach ($all as $key => $b) {
             $campaignMappingId = '-'.$integrationCampaignId;
-            if (isset($b['ContactId']) and $memberId = array_search($b['ContactId'], $contactIds)) {
+            if (isset($b['ContactId']) && ($memberId = array_search($b['ContactId'], $contactIds))) {
                 $id                  = (!empty($lead->getId()) ? $lead->getId() : '').'-CampaignMember'.$b['ContactId'].(!empty($referenceId && $internalLeadId == $lead->getId()) ? '-'.$referenceId : '').$campaignMappingId;
                 $salesforceIdMapping = [$integrationCampaignId];
                 $patchurl            = $url.'/'.$memberId;
@@ -1636,7 +1636,7 @@ class SalesforceIntegration extends CrmAbstractIntegration
                     'referenceId' => $id,
                     'body'        => $b,
                 ];
-            } elseif (isset($b['LeadId']) and $memberId = array_search($b['LeadId'], $leadIds)) {
+            } elseif (isset($b['LeadId']) && ($memberId = array_search($b['LeadId'], $leadIds))) {
                 $id                  = (!empty($lead->getId()) ? $lead->getId() : '').'-CampaignMember'.$b['LeadId'].(!empty($referenceId && $internalLeadId == $lead->getId()) ? '-'.$referenceId : '').$campaignMappingId;
                 $salesforceIdMapping = [$integrationCampaignId];
                 $patchurl            = $url.'/'.$memberId;
