@@ -128,7 +128,7 @@ class SalesforceIntegration extends CrmAbstractIntegration
     {
         $config = $this->mergeConfigToFeatureSettings([]);
 
-        if (isset($config['sandbox'][0]) and $config['sandbox'][0] === 'sandbox') {
+        if (isset($config['sandbox'][0]) && $config['sandbox'][0] === 'sandbox') {
             return 'https://test.salesforce.com/services/oauth2/authorize';
         }
 
